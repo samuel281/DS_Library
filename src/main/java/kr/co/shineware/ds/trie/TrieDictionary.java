@@ -1,6 +1,7 @@
 package kr.co.shineware.ds.trie;
 
 import kr.co.shineware.ds.trie.model.TrieNode;
+import org.apache.hadoop.fs.Path;
 
 public class TrieDictionary<V> {
 	private TrieNode<V> root;
@@ -158,9 +159,19 @@ public class TrieDictionary<V> {
 	public void save(String filename){
 		root.save(filename);
 	}
+
 	public void load(String filename){
 		root.load(filename);
 	}
+
+	public void save(Path filePath) {
+		root.save(filePath);
+	}
+
+	public void load(Path filePath) {
+		root.load(filePath);
+	}
+
 	public boolean hasChildren() {
 		return hasChildren;
 	}
